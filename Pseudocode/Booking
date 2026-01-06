@@ -1,0 +1,30 @@
+START
+    // This function runs automatically after Payment is True
+    INPUT payment_status
+    INPUT selected_flight_id
+    INPUT passenger_details
+
+    IF payment_status EQUALS "SUCCESS" THEN
+        // 1. Lock the seat permanently
+        UPDATE database_flights 
+        SET seat_availability = "Sold" 
+        WHERE flight_id = selected_flight_id
+
+        // 2. Generate Booking Reference (Random 6-char code)
+        SET booking_ref = GENERATE_RANDOM_STRING(6)
+
+        // 3. Create the Ticket Object
+        SET new_ticket = CONSTRUCT_TICKET(booking_ref, passenger_details, selected_flight_id)
+        SAVE new_ticket TO database_bookings
+
+        // 4. Output to User
+        PRINT "Booking Successful!"
+        PRINT "Your Booking Reference is: " + booking_ref
+        DISPLAY new_ticket
+        CALL Send_Email(passenger_details.email, new_ticket)
+    
+    ELSE
+        PRINT "Confirmation Failed: Payment not verified."
+        GOTO Payment_Page
+    ENDIF
+END
