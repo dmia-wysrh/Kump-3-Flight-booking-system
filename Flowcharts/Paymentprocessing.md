@@ -1,5 +1,5 @@
 ```mermaid
-flowchart LR
+flowchart TD
     A[Proceed to payment] --> B[Display payment page]
     B --> C[User enters payment details]
     C --> D{Payment details valid?}
