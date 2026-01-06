@@ -1,46 +1,16 @@
-START
-    // Initialize Database
-    DEFINE database_users AS List
+flowchart LR
+    Start([Start]) --> Input1[/Input Username & Password/]
+    Input1 --> Process1[Check Database Records]
+    Process1 --> Decision{Credentials Valid?}
 
-    PRINT "--- Welcome to Online Flight Booking System ---"
-    PRINT "1. Login"
-    PRINT "2. Register"
-    INPUT user_choice
+    Decision -- Yes --> Output1[/Display "Login Successful"/]
+    Output1 --> End([Access Dashboard])
 
-    IF user_choice EQUALS "2" THEN
-        // Registration Process
-        PRINT "Enter New Username:"
-        INPUT new_username
-        PRINT "Enter New Password:"
-        INPUT new_password
+    Decision -- No --> Output2[/Display "Error: Invalid Login"/]
+    Output2 --> Decision2{Register New Account?}
 
-        IF new_username EXISTS IN database_users THEN
-            PRINT "Error: Username already taken."
-        ELSE
-            STORE new_username AND new_password IN database_users
-            PRINT "Registration Successful! Please Login."
-            GOTO Login_Section
-        ENDIF
-
-    ELSE IF user_choice EQUALS "1" THEN
-        // Login Process
-        LABEL Login_Section
-        PRINT "Enter Username:"
-        INPUT input_username
-        PRINT "Enter Password:"
-        INPUT input_password
-
-        GET user_record FROM database_users WHERE username EQUALS input_username
-
-        IF user_record IS NOT NULL AND user_record.password EQUALS input_password THEN
-            PRINT "Login Successful! Loading Dashboard..."
-            CALL Display_Dashboard()
-        ELSE
-            PRINT "Error: Invalid Username or Password."
-            PRINT "Access Denied."
-        ENDIF
-
-    ELSE
-        PRINT "Invalid Selection. Exiting."
-    ENDIF
-END
+    Decision2 -- No --> Input1
+    Decision2 -- Yes --> Input3[/Input New User Details/]
+    Input3 --> Process2[Save New User to Database]
+    Process2 --> Output3[/Display "Registration Complete"/]
+    Output3 --> Input1
