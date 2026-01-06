@@ -1,5 +1,5 @@
 ```mermaid
-flowchart LR
+flowchart TD
 A[Enter Destination & Date] --> B[Query Flight Database]
 B --> C{Is the seat available}
 C -- Yes --> D[Display Flight in Result]
