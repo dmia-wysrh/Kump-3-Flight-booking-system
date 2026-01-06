@@ -1,4 +1,4 @@
-BEGIN flightAvailabilty 
+BEGIN 
 
 INPUT travelDestination
 INPUT travelDate
@@ -11,7 +11,7 @@ FOR flight IN
                   DISPLAY flight.details
                   DISPLAY "Status: Available"
         ELSE
-                  DISLPAY "Status: Full Flight"
+                  DISPLAY "Status: Full Flight"
              END IF 
 END FOR
 
@@ -24,4 +24,4 @@ IF userResult IS NOT EMPTY THEN
         DISPLAY "No flights available for these criteria."
     END IF
 
-END FlightAvailability
+END
