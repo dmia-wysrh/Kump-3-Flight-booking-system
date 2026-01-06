@@ -1,0 +1,27 @@
+BEGIN flightAvailabilty 
+
+INPUT travelDestination
+INPUT travelDate
+
+SET matchingFlights = Query flightDatabase WHERE destination = travelDestination AND date = travelDate
+
+FOR flight IN 
+       matchingFlights DO
+             IF flight.availableSeats > 0 THEN
+                  DISPLAY flight.details
+                  DISPLAY "Status: Available"
+        ELSE
+                  DISLPAY "Status: Full Flight"
+             END IF 
+END FOR
+
+IF userResult IS NOT EMPTY THEN
+     WAIT for UserSelection
+        IF UserSelectsFlight THEN
+            PROCEED to BookingProcess
+        END IF
+    ELSE
+        DISPLAY "No flights available for these criteria."
+    END IF
+
+END FlightAvailability
