@@ -1,5 +1,5 @@
 ``` mermaid
-flowchart LR
+flowchart TD
     Start([Start]) --> Input1[/User Selects Flight/]
     Input1 --> Process1[Retrieve Seat Map Data]
     Process1 --> Output1[/Display Seat Layout/]
