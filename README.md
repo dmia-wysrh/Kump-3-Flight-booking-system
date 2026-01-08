@@ -31,11 +31,11 @@ Provides a secure and efficient platform for managing flight bookings and passen
 - Flowchart
 
 # Main Features
-- User registration & login
-- Search available flights
-- Select flights & seats
-- Payment processing
-- Booking confirmation
+- #User registration & login
+- #Search available flights
+- #Select flights & seats
+- #Payment processing
+- #Booking confirmation
 
 # Interface
 
