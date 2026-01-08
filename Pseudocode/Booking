@@ -1,5 +1,4 @@
 START
-    // This function runs automatically after Payment is True
     INPUT payment_status
     INPUT selected_flight_id
     INPUT passenger_details
