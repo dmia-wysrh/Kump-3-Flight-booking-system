@@ -26,16 +26,16 @@ Eliminates the need for physical visits to airline offices or reliance on travel
 Reduces inefficiencies and human errors associated with manual processes.
 Provides a secure and efficient platform for managing flight bookings and passenger data.
 
-# Method used
--Pseudocode
--Flowchart
+# Method Used
+- Pseudocode
+- Flowchart
 
-# Main features
-User registration & login
-Search available flights
-Select flights & seats
-Payment processing
-Booking confirmation
+# Main Features
+- User registration & login
+- Search available flights
+- Select flights & seats
+- Payment processing
+- Booking confirmation
 
 # Interface
 
