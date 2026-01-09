@@ -1,6 +1,8 @@
 1. User registration & Login system 
+The Online Flight Booking System can be accessed using user registration & login. By providing personal information like name, email address, and password, this will then be kept secure in the system. During the register, users will have to use credentials and checks to ensure no unwanted access happens. This will be verified by the system, and secure the user's account access. This feature permits tracking of user activities and guarantees data security.
 
 2. Search available flights 
+Users then proceed with searching available flights by using keywords such as their travel destination and date to book. The system then displays matching flights including the necessary information, such as flight schedule, cost and seat availability. Other than that, for fully booked flights, flight availability, and seat availability will be shown with appropriate messages such as “Full Flight”, "No flights available for these criteria." and “Available”. This feature ensures users easy browsing during their search for the suitable flights to travel with.
 
 3. Select flight & Seat 
 As available flights are found, users will be prompted to select a specific flight from the results. Upon selection, the system retrieves the current seat map from the database and displays the layout. The user can view which seats are "Available" or "Occupied". When a user clicks a seat, the system verifies its status in real-time. If available, the seat is locked to prevent double-booking; if not, an error is shown.
